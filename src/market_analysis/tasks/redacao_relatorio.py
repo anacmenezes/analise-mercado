@@ -2,16 +2,31 @@ from crewai import Task
 
 
 def criar_redacao_relatorio(redator, contexto):
+
     return Task(
+
         description=(
-            "1. Usar a análise de tendências para criar um relatório detalhado sobre {sector}.\n"
-            "2. Garantir que o relatório seja bem estruturado e compreensível.\n"
-            "3. Apresentar um resumo executivo e recomendações finais."
+            "Elabore o relatório final utilizando exclusivamente as "
+            "informações fornecidas pelo Pesquisador e pelo Analista.\n\n"
+
+            "Preserve a distinção entre informações provenientes da "
+            "base de conhecimento interna (RAG) e informações encontradas "
+            "na internet.\n\n"
+
+            "As fontes internas NÃO podem ser descartadas.\n"
+            "Inclua os nomes dos arquivos utilizados pelo RAG no campo "
+            "fontes_internas.\n\n"
+
+            "Organize o relatório de forma clara e profissional."
         ),
+
         expected_output=(
             "Um relatório de análise de mercado em formato Markdown, "
-            "pronto para leitura e apresentação."
+            "contendo contexto, empresas, tendências, estatísticas, "
+            "oportunidades, desafios, fontes_internas e fontes_externas."
         ),
+
         agent=redator,
+
         context=[contexto]
     )
