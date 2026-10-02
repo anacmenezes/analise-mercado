@@ -7,14 +7,11 @@ def criar_coleta_dados(pesquisador):
         description=(
             "Realize uma pesquisa completa sobre {sector}.\n\n"
 
-            "Utilize as ferramentas disponíveis para coletar informações.\n\n"
+            "Primeiro, consulte a base de conhecimento interna "
+            "utilizando a ferramenta de RAG.\n\n"
 
-            "Primeiro, consulte a base de conhecimento interna utilizando "
-            "a ferramenta de RAG para identificar informações relevantes "
-            "já disponíveis sobre o setor.\n\n"
-
-            "Depois, utilize a ferramenta de pesquisa na internet para "
-            "complementar a análise com informações atuais.\n\n"
+            "Depois, utilize a ferramenta de pesquisa na internet "
+            "para complementar as informações com dados atuais.\n\n"
 
             "Identifique:\n"
             "1. Principais empresas e participantes do mercado.\n"
@@ -24,17 +21,21 @@ def criar_coleta_dados(pesquisador):
             "5. Informações encontradas na base de conhecimento.\n"
             "6. Fontes utilizadas.\n\n"
 
-            "Diferencie informações provenientes da base interna das "
-            "informações encontradas na internet.\n\n"
+            "Diferencie informações provenientes da base interna "
+            "das informações encontradas na internet.\n\n"
 
             "Não invente dados ou fontes."
         ),
 
         expected_output=(
-            "Um documento estruturado contendo uma análise de {sector}, "
-            "com tendências, empresas, dados, oportunidades, desafios "
-            "e fontes utilizadas. O documento deve diferenciar informações "
-            "provenientes da base interna e informações obtidas na internet."
+            "Um documento estruturado contendo:\n"
+            "- informações da base interna;\n"
+            "- informações atuais encontradas na internet;\n"
+            "- tendências;\n"
+            "- empresas;\n"
+            "- dados e estatísticas;\n"
+            "- oportunidades e desafios;\n"
+            "- fontes utilizadas."
         ),
 
         agent=pesquisador

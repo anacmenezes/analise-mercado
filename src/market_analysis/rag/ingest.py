@@ -3,12 +3,15 @@ from pathlib import Path
 import chromadb
 from chromadb.utils import embedding_functions
 
+from .splitter import split_text
+
 
 DOCUMENTS_PATH = Path("data/documents")
 CHROMA_PATH = "data/chroma"
 
 
 def create_vector_store():
+
     client = chromadb.PersistentClient(
         path=CHROMA_PATH
     )
@@ -25,17 +28,28 @@ def create_vector_store():
     ids = []
 
     for file in DOCUMENTS_PATH.glob("*.txt"):
-        content = file.read_text(encoding="utf-8")
 
-        documents.append(content)
+        content = file.read_text(
+            encoding="utf-8"
+        )
 
-        metadatas.append({
-            "source": file.name
-        })
+        chunks = split_text(content)
 
-        ids.append(file.stem)
+        for index, chunk in enumerate(chunks):
+
+            documents.append(chunk)
+
+            metadatas.append({
+                "source": file.name,
+                "chunk_id": index
+            })
+
+            ids.append(
+                f"{file.stem}_chunk_{index}"
+            )
 
     if documents:
+
         collection.upsert(
             documents=documents,
             metadatas=metadatas,
@@ -46,8 +60,9 @@ def create_vector_store():
 
 
 if __name__ == "__main__":
+
     collection = create_vector_store()
 
     print(
-        f"Documentos indexados: {collection.count()}"
+        f"Documentos/chunks indexados: {collection.count()}"
     )

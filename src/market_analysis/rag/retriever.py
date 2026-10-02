@@ -29,5 +29,15 @@ def search(query: str, n_results: int = 3):
     )
 
     documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
 
-    return documents
+    return [
+        {
+            "content": document,
+            "metadata": metadata
+        }
+        for document, metadata in zip(
+            documents,
+            metadatas
+        )
+    ]

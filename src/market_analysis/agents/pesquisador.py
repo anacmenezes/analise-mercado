@@ -1,6 +1,7 @@
 from crewai import Agent
 
 from ..tools.search_tool import search_tool, rag_search
+from ..tools.rag_tool import rag_tool
 
 
 def criar_pesquisador():
@@ -31,9 +32,7 @@ def criar_pesquisador():
         Não invente informações.
         """,
 
-        tools=[search_tool, rag_search],
-
+        tools=[rag_tool, search_tool],
         allow_delegation=False,
-
         verbose=True
     )
