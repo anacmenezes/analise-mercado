@@ -1,0 +1,13 @@
+Tendências de Inteligência Artificial
+
+Uma das principais tendências atuais é a expansão da IA generativa, especialmente por meio de modelos capazes de trabalhar com texto, imagem, áudio e código.
+
+Outra tendência importante é o desenvolvimento de sistemas baseados em agentes de IA. Esses sistemas utilizam modelos de linguagem para executar tarefas, utilizar ferramentas, buscar informações e tomar decisões dentro de determinados fluxos.
+
+O RAG (Retrieval-Augmented Generation) é uma arquitetura utilizada para conectar modelos de linguagem a bases de conhecimento externas. O sistema recupera informações relevantes antes de gerar uma resposta, reduzindo a dependência do conhecimento armazenado diretamente no modelo.
+
+Também existe uma crescente integração entre IA e desenvolvimento de software. Ferramentas de IA podem auxiliar na geração, análise, documentação e manutenção de código.
+
+Outra tendência é a utilização de arquiteturas multimodais, nas quais os modelos trabalham com diferentes tipos de informação, como texto, imagens e áudio.
+
+Empresas também estão utilizando IA para automação de processos, análise de documentos, atendimento ao cliente, pesquisa e apoio à tomada de decisões.

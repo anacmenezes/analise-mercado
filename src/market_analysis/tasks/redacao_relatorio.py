@@ -13,5 +13,5 @@ def criar_redacao_relatorio(redator, contexto):
             "pronto para leitura e apresentação."
         ),
         agent=redator,
-        context=contexto
+        context=[contexto]
     )

@@ -1,6 +1,6 @@
 from crewai import Agent
 
-from ..tools.search_tool import search_tool
+from ..tools.search_tool import search_tool, rag_search
 
 
 def criar_pesquisador():
@@ -19,11 +19,19 @@ def criar_pesquisador():
         Seu trabalho é pesquisar informações atualizadas sobre {sector},
         identificar dados relevantes, tendências, empresas e estatísticas.
 
-        Sempre que precisar de informações atuais, utilize a ferramenta
-        de pesquisa disponível.
+        Você possui acesso a duas fontes de informação:
+
+        1. Pesquisa na internet, para encontrar informações atuais.
+        2. Base de conhecimento interna, utilizando RAG.
+
+        Utilize a base de conhecimento quando houver informações relevantes
+        disponíveis nela e utilize a pesquisa na internet quando precisar
+        de informações atuais ou complementares.
+
+        Não invente informações.
         """,
 
-        tools=[search_tool],
+        tools=[search_tool, rag_search],
 
         allow_delegation=False,
 

@@ -1,0 +1,17 @@
+Principais participantes do mercado de Inteligência Artificial
+
+Microsoft atua no mercado de IA por meio de sua infraestrutura de nuvem Azure e da integração de recursos de IA em seus produtos e serviços.
+
+Google possui uma forte atuação em inteligência artificial por meio de seus modelos, infraestrutura de computação e produtos baseados em IA.
+
+Amazon utiliza inteligência artificial em sua infraestrutura AWS e em diversos produtos e serviços.
+
+Meta investe em modelos de inteligência artificial e aplicações voltadas para suas plataformas e produtos.
+
+NVIDIA fornece hardware e infraestrutura computacional utilizada no treinamento e execução de modelos de inteligência artificial.
+
+OpenAI desenvolve modelos de inteligência artificial generativa e aplicações baseadas nesses modelos.
+
+Anthropic desenvolve modelos de linguagem e soluções voltadas para aplicações empresariais de inteligência artificial.
+
+O mercado apresenta competição em diferentes camadas, incluindo hardware, infraestrutura de nuvem, modelos fundamentais, ferramentas para desenvolvedores e aplicações finais.
