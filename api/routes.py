@@ -14,6 +14,7 @@ from .services import (
     atualizar_analise,
     deletar_analise
 )
+from fastapi import APIRouter, Depends, HTTPException
 
 router = APIRouter()
 
@@ -22,14 +23,14 @@ def criar_analise(
     request: AnaliseCreate,
     db: Session = Depends(get_db)
 ):
-    
-    return gerar_analise(request.sector, db)
+    try:
+        return gerar_analise(request.sector, db)
 
-@router.get("/analises", response_model=list[AnaliseResponse])
-def listar_analises(db: Session = Depends(get_db)):
-
-    return db.query(Analise).all()
-
+    except RuntimeError as e:
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
 
 @router.get("/analises/{analise_id}", response_model=AnaliseResponse)
 def buscar_analise(

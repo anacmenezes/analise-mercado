@@ -55,3 +55,31 @@ def deletar_analise(analise_id: int, db: Session):
     db.commit()
 
     return True
+
+def gerar_analise(sector: str, db: Session):
+
+    try:
+        crew = criar_crew()
+
+        resultado = crew.kickoff(
+            inputs={
+                "sector": sector
+            }
+        )
+
+        analise = Analise(
+            sector=sector,
+            relatorio=resultado.raw
+        )
+
+        db.add(analise)
+        db.commit()
+        db.refresh(analise)
+
+        return analise
+
+    except Exception as e:
+        db.rollback()
+        raise RuntimeError(
+            "Não foi possível gerar a análise."
+        ) from e
