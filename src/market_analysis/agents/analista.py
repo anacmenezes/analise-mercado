@@ -1,5 +1,5 @@
 from crewai import Agent
-
+from ..config import MODEL_NAME
 
 def criar_analista():
     return Agent(
@@ -9,6 +9,7 @@ def criar_analista():
         Você é um analista de mercado que examina os dados coletados para identificar
         tendências emergentes, oportunidades e ameaças no setor {sector}.
         """,
+        llm=MODEL_NAME,
         allow_delegation=False,
         verbose=True
     )

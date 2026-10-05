@@ -1,38 +1,31 @@
-import time
+import sys
 
 from src.market_analysis.crew import criar_crew
-from src.market_analysis.observability.logger import logger
-from src.market_analysis.observability.metrics import registrar_execucao
-from src.market_analysis.observability.error_handler import registrar_erro
 
 
 def main():
 
-    logger.info("Iniciando análise de mercado")
+    sector = (
+        sys.argv[1]
+        if len(sys.argv) > 1
+        else "Inteligência Artificial"
+    )
 
-    inicio = time.time()
     try:
         crew = criar_crew()
 
-        logger.info("Crew criada")
-
         resultado = crew.kickoff(
             inputs={
-                "sector": "Inteligência Artificial"
+                "sector": sector
             }
         )
-
-        registrar_execucao(resultado, inicio)
 
         print("\n===== RESULTADO FINAL =====\n")
         print(resultado)
 
     except Exception as erro:
-
-        registrar_erro("execução da Crew", erro)
-
-        print("\nErro durante a execução da análise.")
-        print("Consulte o arquivo logs/market_analysis.log")
+        print("\n===== ERRO NA EXECUÇÃO =====")
+        print(f"Erro: {erro}")
 
 
 if __name__ == "__main__":

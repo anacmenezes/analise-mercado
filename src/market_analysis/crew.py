@@ -1,5 +1,7 @@
 from crewai import Crew, Process
 
+from .config import OPENAI_API_KEY, SERPER_API_KEY
+
 from .agents.pesquisador import criar_pesquisador
 from .agents.analista import criar_analista
 from .agents.redator import criar_redator

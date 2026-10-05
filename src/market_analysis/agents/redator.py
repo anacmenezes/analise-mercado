@@ -1,5 +1,5 @@
 from crewai import Agent
-
+from ..config import MODEL_NAME
 
 def criar_redator():
     return Agent(
@@ -23,6 +23,7 @@ def criar_redator():
 
         Respeite rigorosamente a estrutura de saída solicitada.
         """,
+        llm=MODEL_NAME,
         allow_delegation=False,
         verbose=True
     )
