@@ -9,3 +9,5 @@ python-dotenv==1.0.1
 
 SQLAlchemy==2.0.38
 uvicorn==0.34.0
+
+psycopg[binary]==3.3.6
