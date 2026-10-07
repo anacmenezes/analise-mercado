@@ -8,13 +8,11 @@ from .schemas import (
     AnaliseResponse,
     AnaliseUpdate
 )
-from .services import gerar_analise
 from .services import (
     gerar_analise,
     atualizar_analise,
     deletar_analise
 )
-from fastapi import APIRouter, Depends, HTTPException
 
 router = APIRouter()
 

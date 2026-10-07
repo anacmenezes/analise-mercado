@@ -19,4 +19,15 @@ def rag_search(query: str) -> str:
     if not results:
         return "Nenhuma informação relevante encontrada na base de conhecimento."
 
-    return "\n\n".join(results)
+    formatted_results = []
+
+    for result in results:
+        content = result["content"]
+        metadata = result["metadata"]
+
+        formatted_results.append(
+            f"Fonte: {metadata['source']}\n"
+            f"Conteúdo:\n{content}"
+        )
+
+    return "\n\n---\n\n".join(formatted_results)

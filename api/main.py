@@ -1,5 +1,3 @@
-from fastapi import FastAPI
-
 from api.routes import router
 from api.database import Base, engine
 from api import models
