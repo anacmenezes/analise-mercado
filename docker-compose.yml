@@ -1,4 +1,5 @@
 services:
+
   api:
     build: .
     container_name: analise-mercado-api
@@ -6,3 +7,28 @@ services:
       - "8000:8000"
     env_file:
       - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://market_user:market_password@db:5432/market_analysis
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16
+    container_name: analise-mercado-db
+    environment:
+      POSTGRES_USER: market_user
+      POSTGRES_PASSWORD: market_password
+      POSTGRES_DB: market_analysis
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U market_user -d market_analysis"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

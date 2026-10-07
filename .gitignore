@@ -13,3 +13,6 @@ __pycache__/
 
 *.log
 logs/
+
+chroma_db/
+postgres_data/
