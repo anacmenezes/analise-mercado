@@ -26,6 +26,16 @@
 <p>
 Essa aplicação foi desenvolvida utilizando <strong>Python, CrewAI e FastAPI</strong> para criação de um sistema de análise de mercado baseado em uma arquitetura multiagente. O sistema recebe um setor como entrada, realiza pesquisas utilizando <strong>RAG e ferramentas de busca externa</strong>, processa as informações por meio de agentes especializados e gera um relatório estruturado de análise de mercado. A aplicação foi desenvolvida com foco em conceitos práticos de <strong>Engenharia de IA</strong>, desde a construção dos agentes até a disponibilização da aplicação em produção utilizando Docker e Azure.
 
+<p>
+A aplicação está publicada no Azure Container Apps, com interface e API executadas em serviços separados.
+</p>
+
+<p align="center">
+  <a href="https://c63274731f07410fb46542e75ca3018e.prod.enter.pro/">
+    <img src="https://img.shields.io/badge/Acessar-An%C3%A1lise%20de%20Mercado-2E8B57?style=for-the-badge" alt="Acessar Análise de Mercado">
+  </a>
+</p>
+
 O projeto possui uma arquitetura completa envolvendo:
 </p>
 
